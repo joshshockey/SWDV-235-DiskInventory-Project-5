@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Project5.SiteMaster" %>
+
+<%--*Updated 11/16/2018*--%>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <title>Untitled Page</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="headPlaceholder" runat="server"></asp:ContentPlaceHolder>  
+</head>
+<body>
+ <div class="container">
+    <form id="form1" runat="server" class="form-horizontal">
+
+        <header class="jumbotron"><%-- image set in site.css --%>
+            <img alt="Disk Inventory Banner" class="auto-style1" src="Images/music.png" /></header>
+        <div class="row">
+            <aside class="col-sm-2">
+                <nav>
+                    <asp:BulletedList ID="blNav" runat="server" DisplayMode="HyperLink" 
+                        CssClass="nav nav-pills nav-stacked" Width="66px">
+                        <asp:ListItem Value="~/Default.aspx">Home</asp:ListItem>
+                        <asp:ListItem Value="~/Borrowers.aspx">Borrower</asp:ListItem>
+                        <asp:ListItem Value="~/Disk.aspx">Disk</asp:ListItem>
+                        <asp:ListItem Value="~/Artists.aspx">Artists</asp:ListItem> 
+                        <asp:ListItem Value="~/CheckOut.aspx">CheckOut</asp:ListItem>
+                    </asp:BulletedList>
+                </nav>
+            </aside>
+             <main class="col-sm-9">
+                <h1><asp:Label ID="lblPageHeader" runat="server"></asp:Label></h1>
+                <asp:ContentPlaceHolder ID="mainPlaceholder" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+        </div>
+    </form>
+  </div>
+ 
+ <div id="footerContent">
+ 
+ </div>
+</body>
+</html>
